@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/*
+ * This program prompts the user to enter a month and then determines the corresponding season.
+ */
 
 public class WhatSeasonIsIt {
     public static void main(String[] args) {
