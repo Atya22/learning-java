@@ -18,9 +18,9 @@ public class DiscountCalculator {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter the purchase amount: ");
-        int bill = sc.nextInt(); //900
-        int discount = 0;
-        int totalbill = bill;  //900
+        float bill = sc.nextInt(); //900
+        float discount = 0;
+        float totalbill = bill;  //900
         int discountRate = 5; // rate when <= 300
 
         while (bill > 300) { //900, 450
