@@ -5,32 +5,34 @@ public class DaysOfWeek {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number from 1 to 7");
         int day = sc.nextInt();
+        String dayName;
 
         switch (day) {
             case 1:
-                System.out.println ("Monday");
+                dayName = "Monday";
                 break;
             case 2:
-                System.out.println ("Tuesday");
+                dayName = "Tuesday";
                 break;
             case 3:
-                System.out.println ("Wednesday");
+                dayName = "Wednesday";
                 break;
             case 4:
-                System.out.println ("Thursday");
+                dayName = "Thursday";
                 break;
             case 5:
-                System.out.println ("Friday");
+                dayName = "Friday";
                 break;
             case 6:
-                System.out.println ("Saturday");
+                dayName = "Saturday";
                 break;
             case 7:
-                System.out.println ("Sunday");
+                dayName = "Sunday";
                 break;
             default:
-                System.out.println("Invalid input, please enter a number from 1 to 7.");
+                dayName = "Invalid input, please enter a number from 1 to 7.";
                 break;
         }
+        System.out.println(dayName);
     }
 }
