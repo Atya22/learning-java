@@ -18,20 +18,19 @@ public class DiscountCalculator {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter the purchase amount: ");
-        float bill = sc.nextInt(); //900
+        float bill = sc.nextInt();
         float discount = 0;
-        float totalbill = bill;  //900
-        int discountRate = 5; // rate when <= 300
+        float totalBill = 0;
+        float discountRate = 5; // rate when <= 300
 
-        while (bill > 300) { //900, 450
-            discountRate += 5; //10, 15
-            bill /= 2; //for the iteration /450, 225
+        if (bill > 300) {
+            discountRate = bill / 300 * 5;
         }
 
-        discount = totalbill * discountRate / 100;
-        totalbill = totalbill - discount;
+        discount = bill * discountRate / 100;
+        totalBill = bill - discount;
 
-        var str = String.format("Your total bill is: %s₼, amount of discount is: %s₼" , totalbill, discount);
+        var str = String.format("Your total bill is: %.2f₼, amount of discount is: %.2f₼" , totalBill, discount);
         System.out.println(str);
     }
 }
