@@ -7,7 +7,7 @@ public class Calculator {
 
     System.out.print("Enter the first number:");
     int number1 = sc.nextInt();
-    System.out.print("Enter the operator");
+    System.out.print("Enter the operator ");
     char operator = sc.next().charAt(0);
     System.out.print("Enter the second number:");
     int number2 = sc.nextInt();
@@ -26,7 +26,7 @@ public class Calculator {
         return;
     } 
 
-    var str = String.format("The result: " + "%s" + " %s " + "%s" + " = " + "%s", number1, operator, number2, result);
+    var str = String.format("The result: %s %s %s = %s", number1, operator, number2, result);
     System.out.println(str);
 }
 }
