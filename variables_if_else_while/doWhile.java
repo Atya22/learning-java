@@ -9,6 +9,5 @@ public class doWhile {
         while (i > 0);
 
         System.out.println(sum);
-    
     }
 }
