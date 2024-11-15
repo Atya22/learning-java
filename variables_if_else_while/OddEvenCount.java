@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OddEvenCountSum {
+public class OddEvenCount {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
@@ -20,11 +20,11 @@ public class OddEvenCountSum {
             number2 = number - number2;
             number = number - number2;
         }
-        for(int i = number; i <= number2; i++){
-            if(i % 2 == 0){
+        for ( int i = number; i <= number2; i++){
+            if (i % 2 == 0){
                 countOdd += 1;
                 sumOdd += i;
-            } else{
+            } else {
                 countEven += 1;
                 summEven += i;
             }
