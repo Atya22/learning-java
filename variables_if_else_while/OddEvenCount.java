@@ -1,4 +1,10 @@
 import java.util.Scanner;
+/**
+ * This program takes two numbers from the user, determines the range between them,
+ * and counts the number of odd and even numbers within that range (exclusive),
+ * along with calculating the sum of those odd and even numbers.
+ * The entered numbers themselves are not included in the range.
+ */
 
 public class OddEvenCount {
     public static void main(String[] args){
@@ -20,7 +26,7 @@ public class OddEvenCount {
             number2 = number - number2;
             number = number - number2;
         }
-        for ( int i = number; i <= number2; i++){
+        for ( int i = number + 1; i < number2; i++){
             if (i % 2 == 0){
                 countOdd += 1;
                 sumOdd += i;
