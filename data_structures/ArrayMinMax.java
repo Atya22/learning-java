@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ArrayMinMax {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the length of array: ");
         int lengthArr = sc.nextInt();
@@ -15,11 +15,11 @@ public class ArrayMinMax {
         }
 
         //finding the max and min values;
-        for (int i = 0; i < arr.length; i++){
-            if (arr[i] < min){
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
                 min = arr[i];
             }
-            if (arr[i] > max){
+            if (arr[i] > max) {
                 max = arr[i];
             }
         }
