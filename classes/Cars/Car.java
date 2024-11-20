@@ -45,6 +45,10 @@ public class Car {
         this.fuelConsumption = fuelConsumption;
     }
 
+    public Car() {
+
+    }
+
     public void displayInfo() {
         System.out.println("Model: " + model + ", Speed: " + speed + " km/h" + ", Trunk Volume: " + trunkVolume + " L" + ", Fuel Consumption: " + fuelConsumption + " L/100km");
     }
