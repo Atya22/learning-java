@@ -3,7 +3,7 @@ package AcademyApp;
 public class Student extends Academy {
     private int studentId;
     private String course;
-    private Academy academy; // Ссылка на академию
+    private Academy academy;
 
 
     public int getStudentId() {
