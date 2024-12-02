@@ -9,7 +9,7 @@ public class Director extends Manager {
     }
 
     @Override
-    public double calculateSalary(){
+    public double calculateSalary() {
         return super.calculateExperience() * getBaseSalary() + getManagerPayment() + bonus;
-    };
+    }
 }

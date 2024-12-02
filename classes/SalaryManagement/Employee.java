@@ -1,4 +1,5 @@
 package SalaryManagement;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -23,13 +24,16 @@ public class Employee {
     public Employee() {
     }
 
-    public long calculateExperience(){
+    public long calculateExperience() {
         LocalDate currentDate = LocalDate.now();
         return ChronoUnit.YEARS.between(startingYear, currentDate);
     }
-    public double calculateSalary(){
+
+    public double calculateSalary() {
         return calculateExperience() * BASE_SALARY;
-    };
+    }
+
+    ;
 
     @Override
     public String toString() {

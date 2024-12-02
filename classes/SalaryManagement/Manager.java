@@ -1,7 +1,7 @@
 package SalaryManagement;
 
-public class Manager extends Employee{
-    private static final double MANAGER_PAYMENT =5000;
+public class Manager extends Employee {
+    private static final double MANAGER_PAYMENT = 5000;
     private double bonus;
 
     public Manager(int number, String name, int year, int month, int day, String department, double bonus) {
@@ -18,7 +18,9 @@ public class Manager extends Employee{
     }
 
     @Override
-    public double calculateSalary(){
+    public double calculateSalary() {
         return super.calculateExperience() * getBaseSalary() + MANAGER_PAYMENT + bonus;
-    };
+    }
+
+    ;
 }
