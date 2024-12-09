@@ -1,18 +1,18 @@
-package MapSudents;
+package HashMap_HashSet;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Students {
+public class MapStudents {
     private Integer id;
     private Student student;
 
     Map <Integer, Student> students = new HashMap<>();
 
-    public Students() {
+    public MapStudents() {
     }
 
-    public Students(Integer id, Student student) {
+    public MapStudents(Integer id, Student student) {
         this.student = student;
         this.id = id;
     }

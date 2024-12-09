@@ -1,4 +1,4 @@
-package MapSudents;
+package HashMap_HashSet;
 
 public class Student {
     private String name;
