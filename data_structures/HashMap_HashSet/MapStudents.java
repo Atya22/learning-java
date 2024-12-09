@@ -30,6 +30,11 @@ public class MapStudents {
     }
 
     public void printStudents() {
-        System.out.println(students.values());
+        for (Map.Entry<Integer, Student> entry : students.entrySet()) {
+            var student = entry.getValue();
+            String str = String.format("Student with ID = %s is called %s %s.",
+                    student.getId(), student.getName(), student.getSureName());
+            System.out.println(str);
+        }
     }
 }

@@ -7,6 +7,15 @@ public class Main {
         Student student4 = new Student("Alla", "Puqacova", 43);
         Student student5 = new Student("Alla", "Puqacova", 42);
 
+//HashSet
+        SetStudents setStudents = new SetStudents();
+        setStudents.addStudent(student1);
+        setStudents.addStudent(student2);
+        setStudents.addStudent(student4);
+        setStudents.addStudent(student5);
+
+        setStudents.printStudents();
+
 //HashMap
         MapStudents mapStudents = new MapStudents();
         mapStudents.putStudent(student1);
