@@ -2,40 +2,38 @@ package HashMap_HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        Student student1 = new Student("Gafar", "Jey");
-        Student student2 = new Student("Milana", "Grey");
-        Student student3 = new Student("Ali", "AA");
-
-////HashSet
-//        SetStudents setStudent = new SetStudents();
-//
-//        setStudent.addStudent(4, student1);
-//        setStudent.addStudent(1, student2);
-//        setStudent.allStudents();
-//        setStudent.removeStudent(4);
-//        setStudent.allStudents();
-
-
+        Student student1 = new Student("Gafar", "Jey", 4);
+        Student student2 = new Student("Milana", "Grey", 43);
+        Student student4 = new Student("Alla", "Puqacova", 43);
+        Student student5 = new Student("Alla", "Puqacova", 42);
 
 //HashMap
-        System.out.println();
-        System.out.println();;
         MapStudents mapStudents = new MapStudents();
-        mapStudents.putStudent(7, student1);
-        mapStudents.putStudent(3, student2);
-        mapStudents.putStudent(3, student3);
+        mapStudents.putStudent(student1);
+        mapStudents.putStudent(student2);
+        mapStudents.putStudent(student4);
+        mapStudents.putStudent(student5);
 
+        mapStudents.printStudents();
+
+//        get student with a specific ID.
         try {
-            var student = mapStudents.getStudent(3);
+            var student = mapStudents.getStudent(5);
             System.out.println(student);
-        } catch (StudentNotFound e){
+        } catch (StudentNotFound e) {
             System.out.println(e.getMessage());
         }
 
-//        setStudents.removeStudent(3);
-
+//        remove student by the ID.
         try {
             mapStudents.removeStudent(20);
+            mapStudents.removeStudent(4);
+        } catch (StudentNotFound e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            mapStudents.removeStudent(4);
         } catch (StudentNotFound e) {
             System.out.println(e.getMessage());
         }
