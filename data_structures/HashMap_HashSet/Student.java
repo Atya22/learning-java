@@ -19,6 +19,10 @@ public class Student {
         return name;
     }
 
+    public String getSureName() {
+        return sureName;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
