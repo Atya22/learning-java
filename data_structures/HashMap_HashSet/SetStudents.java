@@ -1,33 +1,42 @@
 package HashMap_HashSet;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
-public class MapStudents {
-    private Integer id;
-    private Student student;
+public class SetStudents {
+    private final HashSet<Student> students = new HashSet<>();
 
-    Map<Integer, Student> students = new HashMap<>();
-
-    public MapStudents() {
+    public SetStudents() {
     }
 
-    public MapStudents(Integer id, Student student) {
-        this.student = student;
-        this.id = id;
+    public void addStudent(Student student) {
+        students.add(student);
     }
 
-    public void addStudent(Integer id, Student student) {
-        students.put(id, student);
-        System.out.println("Student added:" + student.getName());
+    public void removeStudent(Student student) throws StudentNotFound {
+        if (!students.contains(student)) {
+            throw new StudentNotFound("Student: = " + student + " not found");
+        }
+        students.remove(student);
     }
 
-    public void removeStudent(Integer id) {
-        students.remove(id);
+    //    get student by the ID
+    public Student getStudent(int id) throws StudentNotFound {
+        for (Student st : students) {
+            if (st.getId() == id) {
+                return st;
+            }
+        }
+        throw new StudentNotFound("The student with ID = " + id + " not found");
     }
 
-
-    public void allStudents() {
-        System.out.println(students.values());
+    public void printStudents() {
+        for (Student st : students) {
+            String str = String.format("Student with ID = %s is called %s %s.",
+                    st.getId(), st.getName(), st.getSureName());
+            System.out.println(str);
+        }
     }
 }
