@@ -4,28 +4,42 @@ public class Main {
     public static void main(String[] args) {
         Student student1 = new Student("Gafar", "Jey");
         Student student2 = new Student("Milana", "Grey");
-//MapSet
+        Student student3 = new Student("Ali", "AA");
+
+////HashSet
+//        SetStudents setStudent = new SetStudents();
+//
+//        setStudent.addStudent(4, student1);
+//        setStudent.addStudent(1, student2);
+//        setStudent.allStudents();
+//        setStudent.removeStudent(4);
+//        setStudent.allStudents();
+
+
+
+//HashMap
+        System.out.println();
+        System.out.println();;
         MapStudents mapStudents = new MapStudents();
-
-        mapStudents.addStudent(4, student1);
-        mapStudents.addStudent(1, student2);
-        mapStudents.allStudents();
-        mapStudents.removeStudent(4);
-        mapStudents.allStudents();
-
-//HashSet
-        SetStudents setStudents = new SetStudents();
-        setStudents.addStudent(7, student1);
-        setStudents.addStudent(3, student2);
-
-        setStudents.removeStudent(3);
+        mapStudents.putStudent(7, student1);
+        mapStudents.putStudent(3, student2);
+        mapStudents.putStudent(3, student3);
 
         try {
-            setStudents.removeStudent(20);
+            var student = mapStudents.getStudent(3);
+            System.out.println(student);
+        } catch (StudentNotFound e){
+            System.out.println(e.getMessage());
+        }
+
+//        setStudents.removeStudent(3);
+
+        try {
+            mapStudents.removeStudent(20);
         } catch (StudentNotFound e) {
             System.out.println(e.getMessage());
         }
 
-        setStudents.allStudents();
+        mapStudents.printStudents();
     }
 }
