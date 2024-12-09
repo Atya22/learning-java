@@ -7,7 +7,7 @@ public class MapStudents {
     private Integer id;
     private Student student;
 
-    Map <Integer, Student> students = new HashMap<>();
+    Map<Integer, Student> students = new HashMap<>();
 
     public MapStudents() {
     }
@@ -17,17 +17,17 @@ public class MapStudents {
         this.id = id;
     }
 
-    public void addStudent (Integer id, Student student){
+    public void addStudent(Integer id, Student student) {
         students.put(id, student);
         System.out.println("Student added:" + student.getName());
     }
 
-    public void removeStudent (Integer id){
+    public void removeStudent(Integer id) {
         students.remove(id);
     }
 
 
-    public void allStudents(){
+    public void allStudents() {
         System.out.println(students.values());
     }
 }
