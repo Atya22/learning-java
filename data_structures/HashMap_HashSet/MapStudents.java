@@ -6,11 +6,10 @@ import java.util.Map;
 public class MapStudents {
     private int id;
     private Student student;
+    private Map<Integer, Student> students = new HashMap<>();
 
     public MapStudents() {
     }
-
-    Map<Integer, Student> students = new HashMap<>();
 
     public MapStudents(int id, Student student) {
         this.id = id;
