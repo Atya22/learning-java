@@ -1,14 +1,34 @@
 package ArrayList;
+
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        ArrayListMethods myList = new ArrayListMethods();
+        // Create an instance of ArrayListMethods
+        ArrayListMethods arrayListMethods = new ArrayListMethods();
 
-        myList.addingIntegers();
-        System.out.println(myList.getNumbers());
+        arrayListMethods.addingInteger(1);
+        arrayListMethods.addingInteger(2);
+        arrayListMethods.addingInteger(3);
+        arrayListMethods.addingInteger(4);
+        arrayListMethods.addingInteger(5);
+        arrayListMethods.addingInteger(6);
 
-        System.out.println(myList.deleteElements(3));
-        System.out.println(myList.deleteElements(5));
+        // Print the original list
+        System.out.println("Original List: " + arrayListMethods.getNumbers());
 
-        System.out.println(myList.findIndex(3));
+        // Delete an element at a specific index
+        int indexToDelete = 2; // Example: remove the 3rd element (index 2)
+        arrayListMethods.deleteElement(indexToDelete);
+        System.out.println("After deleting element at index " + indexToDelete + ": " + arrayListMethods.getNumbers());
+
+        // Find the index of a specific element
+        int elementToFind = 50; // Example: find the index of 50
+        int foundIndex = arrayListMethods.findIndex(elementToFind);
+        if (foundIndex != -1) {
+            System.out.println("Element " + elementToFind + " found at index: " + foundIndex);
+        } else {
+            System.out.println("Element " + elementToFind + " not found in the list.");
+        }
     }
 }
