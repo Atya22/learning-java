@@ -1,4 +1,4 @@
-package TravleApp;
+package TravelApp;
 
 import java.util.ArrayList;
 import java.util.List;

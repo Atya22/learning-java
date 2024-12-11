@@ -1,4 +1,4 @@
-package TravleApp;
+package TravelApp;
 
 public enum ToursPackage {
     BEACH_HOLIDAY,

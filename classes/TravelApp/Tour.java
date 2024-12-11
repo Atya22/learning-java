@@ -1,4 +1,4 @@
-package TravleApp;
+package TravelApp;
 
 public class Tour {
     private int tourId;
