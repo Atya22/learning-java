@@ -6,8 +6,10 @@ public class Main {
     public static void main(String[] args) {
         Author author = new Author("John", "Jey");
 
-        News<String, String, Author> news = new News<>(
-                "Technology",
+        Category category = new Category("Technology");
+
+        News<Category, String, Author> news = new News<>(
+                category,
                 "AI Revolution",
                 author,
                 LocalDateTime.now()
