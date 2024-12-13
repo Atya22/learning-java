@@ -3,7 +3,7 @@ package NewsPortal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class News<C, N, A> { // C: Category, N: Name, A: Author
+public class News<C, N, A> {
     private C category;
     private N name;
     private A author;
