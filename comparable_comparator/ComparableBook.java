@@ -1,6 +1,6 @@
 import Library.Genre;
 
-public class ComparableBook implements Comparable <ComparableBook> {
+public class ComparableBook implements Comparable<ComparableBook> {
     private String name;
     private String author;
     private String genre;
