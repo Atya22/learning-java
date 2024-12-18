@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
     private String name;
     private String surename;
     private Integer debt;
@@ -55,5 +55,10 @@ public class Customer {
     @Override
     public int hashCode() {
         return Objects.hash(name, surename, debt);
+    }
+
+    @Override
+    public int compareTo(Customer that) {
+        return Integer.compare(this.getSurename().length(), that.getSurename().length());
     }
 }
