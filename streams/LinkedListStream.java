@@ -14,8 +14,12 @@ public class CustomerOperation {
 
         debtPeople.stream()
                 .filter(x -> x.getDebt() > 350)
-                .forEach(x -> x.setDebt(x.getDebt() + x.getDebt() / 2));
+                .peek(x -> {
+                    int l = x.getDebt() + (x.getDebt() / 2);
+                    x.setDebt(l);// Modify the debt
+                }).forEach(System.out::print);
 
-        System.out.println(debtPeople);
+//        System.out.println();
+//        System.out.println(debtPeople);
     }
 }
