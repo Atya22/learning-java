@@ -1,8 +1,6 @@
 import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class CustomerOperation {
+public class LinkedListStream {
     public static void main(String[] args) {
         Customer customer1 = new Customer("Xz", "Xzov", 765);
         Customer customer2 = new Customer("Hmm", "Hmmov", 300);
@@ -14,12 +12,8 @@ public class CustomerOperation {
 
         debtPeople.stream()
                 .filter(x -> x.getDebt() > 350)
-                .peek(x -> {
-                    int l = x.getDebt() + (x.getDebt() / 2);
-                    x.setDebt(l);// Modify the debt
-                }).forEach(System.out::print);
+                .forEach(x -> x.setDebt(x.getDebt() + x.getDebt() / 2));
 
-//        System.out.println();
-//        System.out.println(debtPeople);
+        System.out.println(debtPeople);
     }
 }
