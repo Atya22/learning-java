@@ -1,8 +1,9 @@
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class GenericQueue<T> {
-    List<T> queue;
+    Queue <T> queue;
 
     public GenericQueue() {
         this.queue = new LinkedList<>();
@@ -10,11 +11,11 @@ public class GenericQueue<T> {
 
 
     public void enqueue(T element) {
-        queue.addLast(element);
+        queue.add(element);
     }
 
     public void dequeue() {
-        queue.removeFirst();
+        queue.poll();
     }
 
     public boolean isEmpty() {
