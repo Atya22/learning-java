@@ -1713,3 +1713,90 @@ FROM products;
 SELECT MIN(price) AS lowest_price
 FROM products;
 
+--AVG, SUM, COUNT
+SELECT AVG (price)
+FROM products;
+--Null values are ignored, returned the average price of all products, the result was 28.8663636363636364.
+--We can use the ::NUMERIC operator to round the average price to a number with 2 decimals.
+SELECT AVG(price)::NUMERIC(10,2)
+FROM products;
+
+--LIKE OPERATOR -operator is used in a WHERE clause to search for a specified pattern in a column.
+--To return records that starts with a specific letter or phrase, add the % at the end of the letter or phrase.
+SELECT * FROM customers
+WHERE customer_name LIKE 'A%';
+
+--CONTAINS
+SELECT * FROM customers
+WHERE customer_name LIKE '%a%';
+--Note: The LIKE operator is case sensitive,
+-- if you want to do a case insensitive search, use the ILIKE operator instead.
+
+--The _ wildcard represents a single character.
+--It can be any character or number, but each _ represents one, and only one, character.
+SELECT * FROM customers
+WHERE city LIKE 'L_nd_';
+
+--The IN operator allows you to specify a list of possible values in the WHERE clause.
+--The IN operator is a shorthand for multiple OR conditions.
+SELECT * FROM customers
+WHERE country IN ('Germany', 'France', 'UK');
+--for the otherwise use NOT IN
+
+--You can also use a SELECT statement inside the parenthesis
+-- to return all records that are in the result of the SELECT statement
+SELECT * FROM customers
+WHERE customer_id IN (SELECT customer_id FROM orders);
+
+SELECT * FROM customers
+WHERE customer_id NOT IN(SELECT customer_id FROM orders);
+
+--The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+--The BETWEEN operator is inclusive: begin and end values are included.
+SELECT * FROM products
+WHERE price BETWEEN  10 AND 15;
+
+--The BETWEEN operator can also be used on text values.
+--The result returns all records that are alphabetically between the specified values
+--Select all products between 'Pavlova' and 'Tofu' AND SORT THEM
+SELECT * FROM products
+WHERE product_name BETWEEN 'Pavlova' AND 'Tofu'
+ORDER BY product_name;
+
+--BETWEEN Date Values
+--Select all orders between 12. of April 2023 and 5. of May 2023:
+SELECT * FROM orders
+WHERE order_date BETWEEN '2023-04-12' AND '2023-05-05';
+
+--ALIASES
+--SQL aliases are used to give a table, or a column in a table, a temporary name.
+--Aliases are often used to make column names more readable.
+--An alias only exists for the duration of that query.
+--An alias is created with the AS keyword.
+SELECT customer_id AS id
+FROM customers;
+
+--Concatenate Columns
+--Concatenate two fields and call them product:
+SELECT product_name || unit AS product
+FROM products;
+--Note: In the result of the example above we are missing a space between product_name and unit. To add a space when concatenating, use || ' ' ||.
+SELECT product_name || ' ' || unit as product
+FROM products;
+
+--Using Aliases With a Space Character
+--If you want your alias to contain one or more spaces, like "My Great Products", surround your alias with double quotes.
+SELECT product_name AS "My great products"
+FROM products;
+
+--The GROUP BY clause groups rows that have the same values into summary rows, like "find the number of customers in each country".
+--The GROUP BY clause is often used with aggregate functions like COUNT(), MAX(), MIN(), SUM(), AVG() to group the result-set by one or more columns.
+--Lists the number of customers in each country:
+SELECT COUNT(customer_id), country
+FROM customers
+GROUP BY country;
+
+--The HAVING clause was added to SQL because the WHERE clause cannot be used with aggregate functions.
+--Aggregate functions are often used with GROUP BY clauses, and by adding HAVING we can write condition like we do with WHERE clauses.
+
+
